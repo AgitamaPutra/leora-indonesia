@@ -11,7 +11,14 @@ const Kontak = () => {
   const onFinish = (values) => {
     console.log("Received values:", values);
   };
-
+  const handleClickWa = () => {
+    const phoneNumber = "6281292499946"; // Nomor WhatsApp
+    const message = "Halo Leora, Saya ingin bertanya!"; // Pesan yang ingin dikirim
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappURL, "_blank");
+  };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-manrope px-5 md:px-10 py-10 md:py-10">
       {/* Form */}
@@ -97,8 +104,7 @@ const Kontak = () => {
         <div className="flex space-x-4">
           <div className="flex items-center space-x-4">
             <Link
-              to="https://wa.me/yourphonenumber"
-              target="_blank"
+              onClick={handleClickWa}
               className="text-blue-600 hover:underline flex items-center"
             >
               <div className="bg-customGreen rounded-lg p-2 transition duration-300 transform hover:scale-110">

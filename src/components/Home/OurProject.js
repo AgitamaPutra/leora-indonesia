@@ -99,6 +99,15 @@ export const OurProject = () => {
           type="Condo"
         />
       </div>
+
+      <div className="mt-5 md:mt-10 flex justify-center items-center">
+        <Link
+          to={"/project"}
+          className="bg-customGreen px-4 py-2 rounded-lg text-white font-semibold"
+        >
+          Lihat Lebih Banyak
+        </Link>
+      </div>
     </div>
   );
 };

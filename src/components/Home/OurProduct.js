@@ -15,6 +15,7 @@ import Box1 from "../../asset/product/Box/box1.png";
 import Box2 from "../../asset/product/Box/box2.png";
 import Box3 from "../../asset/product/Box/box3.png";
 import Box4 from "../../asset/product/Box/box4.png";
+import { Link } from "react-router-dom";
 
 const OurProducts = () => {
   const products = [
@@ -98,6 +99,7 @@ const OurProducts = () => {
           />
         ))}
       </div>
+
     </div>
   );
 };
