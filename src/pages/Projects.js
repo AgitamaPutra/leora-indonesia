@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
+import ProjectsCom from "../components/Project/ProjectsCom";
 
 export const Projects = () => {
   return (
@@ -11,6 +12,7 @@ export const Projects = () => {
           "font-semibold text-lg md:text-2xl tracking-[5px] md:tracking-[10px]"
         }
       />
+      <ProjectsCom />
     </div>
   );
 };
