@@ -4,12 +4,10 @@ import { Home } from "./pages/home";
 import { Projects } from "./pages/Projects";
 import Artikel from "./pages/Artikel";
 import { Layout } from "./pages/layout";
-import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <BrowserRouter>
-      <AnimatePresence>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />}></Route>
@@ -20,7 +18,6 @@ function App() {
             <Route path="/kontak-kami" element={<KontakKami />}></Route>
           </Routes>
         </Layout>
-      </AnimatePresence>
     </BrowserRouter>
   );
 }

@@ -12,7 +12,10 @@ const menuItems = [
 
 const socialMediaLinks = [
   { icon: <FaFacebook size={28} />, link: "https://www.facebook.com" },
-  { icon: <FaInstagram size={28} />, link: "https://www.instagram.com" },
+  {
+    icon: <FaInstagram size={28} />,
+    link: "https://www.instagram.com/leoraindonesia_?igsh=MzRlODBiNWFlZA==",
+  },
   {
     icon: <FaLinkedin size={28} />,
     link: "https://www.linkedin.com/company/leora-construction-services/",

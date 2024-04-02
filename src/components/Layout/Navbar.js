@@ -118,7 +118,7 @@ const Navbar = () => {
                     key={index}
                     to={menuItem.link}
                     onClick={handleMenuItemClick}
-                    className="block py-3 px-4 text-white hover:bg-customGreen hover:text-white"
+                    className="block py-3 px-4 text-white hover:bg-customGreen hover:text-white font-semibold"
                   >
                     {menuItem.title}
                   </Link>

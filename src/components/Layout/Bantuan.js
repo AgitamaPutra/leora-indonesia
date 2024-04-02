@@ -19,7 +19,7 @@ export const Bantuan = () => {
 
       <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <div
-          className="bg-green-500 rounded-full p-1 hover:drop-shadow-lg hover:shadow-lg text-xl hover:text-2xl"
+          className="bg-green-500 rounded-full p-1.5 hover:drop-shadow-lg hover:shadow-lg text-xl hover:text-2xl"
           onClick={handleClickWa}
         >
           <FaWhatsapp size={52} className="text-white" />

@@ -6,10 +6,16 @@ import Onthefield from "../components/Home/Onthefield";
 import { OurProject } from "../components/Home/OurProject";
 import { AboutUs } from "../components/Home/AboutUs";
 import OurProducts from "../components/Home/OurProduct";
+import { motion } from "framer-motion";
 
 export const Home = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: "100vh" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+    >
+      <Navbar />
       <Hero
         header={"LEORA INDONESIA"}
         style={
@@ -19,10 +25,8 @@ export const Home = () => {
       />
       <AboutUs />
       <OurProducts />
-      {/* <Beyond /> */}
       <Onthefield />
       <OurProject />
-
       {/* Video YouTube */}
       <div className="px-4 md:px-10 py-6 md:py-10">
         <iframe
@@ -30,11 +34,11 @@ export const Home = () => {
           height="500"
           src="https://www.youtube.com/embed/n__j_bF9O4w"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
-    </div>
+    </motion.div>
   );
 };
