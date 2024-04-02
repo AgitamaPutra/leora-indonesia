@@ -52,7 +52,7 @@ const Onthefield = () => {
 
   return (
     <div className="px-5 md:px-10 py-10 md:py-10 font-manrope bg-gray-200">
-      <h1 className="text-4xl text-customGreen font-bold text-center">
+      <h1 className="text-4xl text-customGreen font-bold text-center drop-shadow-lg">
         On The Field
       </h1>
       <p className="my-5 text-justify">

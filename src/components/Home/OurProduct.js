@@ -81,7 +81,7 @@ const OurProducts = () => {
 
   return (
     <div className="font-manrope px-5 md:px-10 py-10 md:py-10">
-      <h1 className="text-3xl md:text-5xl text-customGreen font-bold text-center mb-10">
+      <h1 className="text-3xl md:text-5xl text-customGreen font-bold text-center mb-10 drop-shadow-lg">
         Our Products
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -28,7 +28,7 @@ const Card = ({ imageSrc, location, type }) => {
 export const OurProject = () => {
   return (
     <div className="px-5 md:px-10 py-10 md:py-10 font-manrope">
-      <h1 className="text-3xl md:text-5xl text-customGreen font-bold font-manrope mb-6 md:mb-8 text-center">
+      <h1 className="text-3xl md:text-5xl text-customGreen font-bold font-manrope mb-6 md:mb-8 text-center drop-shadow-lg">
         Our Project
       </h1>
       <p className="my-3 md:my-5 text-justify">
@@ -49,7 +49,7 @@ export const OurProject = () => {
 
           {/* Penjelasan di kanan */}
           <div>
-            <h2 className="text-2xl md:text-4xl font-semibold text-customGreen ">
+            <h2 className="text-2xl md:text-4xl font-semibold text-customGreen drop-shadow-lg">
               Project Title
             </h2>
             <p className="mt-2 text-justify">

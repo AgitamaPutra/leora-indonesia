@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../../asset/logo.png";
+import { motion, useIsPresent, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const isPresent = useIsPresent();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +56,9 @@ const Navbar = () => {
             <Link
               key={index}
               to={menuItem.link}
-              className={`mx-4 transition-colors duration-300 hover:bg-customGreen hover:text-white px-4 py-2 rounded font-bold font-manrope ${textColor}`}
+              className={`mx-4 transition-colors duration-300 hover:bg-customGreen hover:text-white px-4 py-2 rounded font-bold font-manrope ${textColor} ${
+                location.pathname === menuItem.link ? "bg-customGreen" : ""
+              }`}
             >
               {menuItem.title}
             </Link>
@@ -99,25 +104,37 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`md:hidden w-full transition-all duration-300 ${bgColor}  ${
-            isOpen ? "block" : "hidden"
-          } absolute top-16`}
-        >
-          <div className=" w-full">
-            {menuItems.map((menuItem, index) => (
-              <Link
-                key={index}
-                to={menuItem.link}
-                onClick={handleMenuItemClick}
-                className="block py-2 px-4 text-white hover:bg-customGreen hover:text-white"
-              >
-                {menuItem.title}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+              exit={{ opacity: 0, y: -50, transition: { duration: 0.3 } }}
+              className={`md:hidden w-full ${bgColor} absolute top-16`}
+            >
+              <div className=" w-full">
+                {menuItems.map((menuItem, index) => (
+                  <Link
+                    key={index}
+                    to={menuItem.link}
+                    onClick={handleMenuItemClick}
+                    className="block py-3 px-4 text-white hover:bg-customGreen hover:text-white"
+                  >
+                    {menuItem.title}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
+      <motion.div
+        initial={{ scaleX: 1 }}
+        animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
+        exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
+        style={{ originX: isPresent ? 0 : 1 }}
+        className="privacy-screen"
+      />
     </nav>
   );
 };
